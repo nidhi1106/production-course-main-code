@@ -15,15 +15,16 @@ print(f"langgraph version: {lg_version}")
 
 def main():
 
-    # Test openai
-    llm = ChatOpenAI(model_name="gpt-4o-mini", temperature=0)
+    # # Test openai
+    llm = ChatOpenAI(model="gpt-4o", temperature=0)
+    #llm = ChatOpenAI(model="gpt-4o-mini", temperature=0, use_responses_api=False)
     response = llm.invoke("Say 'setup complete!' in one word")
     print(f"Response from ChatOpenAI: {response}")
 
     # Test anthropic
-    llm_anthropic = ChatAnthropic(model="claude-sonnet-4-5-20250929", temperature=0)
-    response_anthropic = llm_anthropic.invoke("Say 'setup complete!' in one word")
-    print(f"Response from ChatAnthropic: {response_anthropic}")
+    # llm_anthropic = ChatAnthropic(model="claude-sonnet-4-5-20250929", temperature=0)
+    # response_anthropic = llm_anthropic.invoke("Say 'setup complete!' in one word")
+    # print(f"Response from ChatAnthropic: {response_anthropic}")
 
     print("Setup complete!")
 
